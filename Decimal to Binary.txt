@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class Result {
+    // print the binary equivalent of the given number 'n'
+    static void decimalToBinary(int n) {
+        // Initialize the binary number as an empty string
+        String binary = "";
+
+        // Divide the decimal number by 2 repeatedly and take the remainder
+        while (n > 0) {
+            int remainder = n % 2;
+            binary = remainder + binary; // Add the remainder to the binary number
+            n /= 2; // Divide the decimal number by 2
+        }
+
+        System.out.print(binary); // Print the binary number
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        int t;
+        Result o1 = new Result();
+        Scanner sc = new Scanner(System.in);
+        t = Integer.parseInt(sc.nextLine().trim());
+        while (t > 0) {
+            int n;
+            n = sc.nextInt();
+
+            o1.decimalToBinary(n);
+            System.out.println();
+
+            t--;
+        }
+    }
+}
